@@ -23,7 +23,6 @@ const DEFAULT_SETTINGS: UpdateSettings = {
 class UpdateSettingsManager {
   private settingsPath: string;
   private settings: UpdateSettings;
-  
 
   constructor() {
     // Settings and path are resolved lazily on first use (after app.whenReady).

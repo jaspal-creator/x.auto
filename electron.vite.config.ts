@@ -5,10 +5,12 @@ import fixReactVirtualized from 'esbuild-plugin-react-virtualized';
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin({
-      exclude: [],
-      include: ['better-sqlite3']
-    })],
+    plugins: [
+      externalizeDepsPlugin({
+        exclude: [],
+        include: ['better-sqlite3']
+      })
+    ],
     define: {
       'process.env.MAIN_VITE_DB_NAME': JSON.stringify(process.env.MAIN_VITE_DB_NAME),
       'process.env.MAIN_VITE_ENC_KEY': JSON.stringify(process.env.MAIN_VITE_ENC_KEY),

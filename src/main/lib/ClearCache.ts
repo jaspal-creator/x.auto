@@ -81,20 +81,19 @@ export class CacheManager {
     try {
       const userDataPath = app.getPath('userData');
       const sessionDataPath = app.getPath('sessionData');
-      
+
       console.log('App data paths:');
       console.log('  userData:', userDataPath);
       console.log('  sessionData:', sessionDataPath);
-      
+
       // Clear session data directory
       if (existsSync(sessionDataPath)) {
         rmSync(sessionDataPath, { recursive: true, force: true });
         console.log('Session data directory cleared');
       }
-      
+
       // Note: Be very careful about clearing userData as it contains the database
       console.log('WARNING: userData directory NOT cleared (contains database)');
-      
     } catch (error) {
       console.error('Failed to clear app data:', error);
     }
@@ -105,20 +104,20 @@ export class CacheManager {
    */
   async clearEverythingExceptDatabase(): Promise<void> {
     console.log('Starting comprehensive cache and session clearing...');
-    
+
     try {
       // Clear authentication and sessions
       this.clearAllSessions();
-      
+
       // Clear web cache
       await this.clearWebCache();
-      
+
       // Clear stored data
       await this.clearStoredData();
-      
+
       // Reset update settings
       this.clearUpdateSettings();
-      
+
       console.log('All cache and session data cleared successfully');
     } catch (error) {
       console.error('Failed to clear all cache and session data:', error);
@@ -135,25 +134,24 @@ export class CacheManager {
     sessionDataPath: string;
   }> {
     const fs = require('fs');
-    
+
     const sessionDataPath = app.getPath('sessionData');
     const userDataPath = app.getPath('userData');
-    
+
     let sessionFiles: string[] = [];
     let cacheSize = 0;
-    
+
     try {
       if (existsSync(sessionDataPath)) {
         sessionFiles = fs.readdirSync(sessionDataPath);
       }
-      
+
       // Note: There's no direct way to get cache size, this is just a placeholder
       cacheSize = 0;
-      
     } catch (error) {
       console.error('Failed to get cache info:', error);
     }
-    
+
     return {
       sessionFiles,
       cacheSize,

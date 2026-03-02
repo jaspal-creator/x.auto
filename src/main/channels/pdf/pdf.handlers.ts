@@ -17,7 +17,7 @@ export const downloadPdf = async ({ data }: { data: IDownloadPdf }): Promise<Res
     const win = new BrowserWindow({
       show: is.dev, // Show window in development for debugging
       webPreferences: {
-        preload: is.dev 
+        preload: is.dev
           ? join(__dirname, '../preload/index.js')
           : join(__dirname, '../preload/index.js'),
         sandbox: false,
@@ -119,10 +119,12 @@ export const downloadPdf = async ({ data }: { data: IDownloadPdf }): Promise<Res
               `);
             } catch (executeError) {
               console.error('Failed to execute page content check:', executeError);
-              
+
               // If JavaScript execution fails multiple times, use timeout-based approach
               if (attempts >= 5) {
-                console.log('JavaScript execution failed multiple times, using timeout-based approach');
+                console.log(
+                  'JavaScript execution failed multiple times, using timeout-based approach'
+                );
                 // After 5 seconds of trying, just generate the PDF
                 pageContent = false; // Assume page is ready
               } else {
@@ -133,29 +135,33 @@ export const downloadPdf = async ({ data }: { data: IDownloadPdf }): Promise<Res
 
             if (pageContent) {
               // Still loading or error, wait a bit more
-              console.log(`PDF generation attempt ${attempts}/${maxAttempts}: Page still loading...`);
+              console.log(
+                `PDF generation attempt ${attempts}/${maxAttempts}: Page still loading...`
+              );
               setTimeout(checkDataLoaded, 1000);
               return;
             }
 
             // Data is loaded, generate PDF
             console.log('PDF generation: Page loaded successfully, generating PDF...');
-            
+
             // Add a small delay to ensure all rendering is complete
-            await new Promise(resolve => setTimeout(resolve, 500));
-            
+            await new Promise((resolve) => setTimeout(resolve, 500));
+
             let buffer;
             try {
-              buffer = await win.webContents.printToPDF({ 
+              buffer = await win.webContents.printToPDF({
                 pageSize: 'A4',
                 printBackground: true
               });
-              
+
               if (!buffer || buffer.length === 0) {
                 throw new Error('Generated PDF buffer is empty');
               }
-              
-              console.log(`PDF generation: Successfully generated PDF buffer (${buffer.length} bytes)`);
+
+              console.log(
+                `PDF generation: Successfully generated PDF buffer (${buffer.length} bytes)`
+              );
             } catch (pdfError) {
               console.error('PDF printToPDF failed:', pdfError);
               clearTimeout(globalTimeout);

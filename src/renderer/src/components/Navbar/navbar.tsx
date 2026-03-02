@@ -16,7 +16,7 @@ export default function Navbar(): React.ReactNode {
   const { data } = useClientStatus();
   const [items] = React.useState(data.role ? admin : user);
   const { exit } = useLogout();
-   const [version, setVersion] = React.useState<string>('');
+  const [version, setVersion] = React.useState<string>('');
 
   React.useEffect(() => {
     let mounted = true;

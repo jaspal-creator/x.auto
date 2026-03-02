@@ -50,12 +50,12 @@ export class Session {
     try {
       const fs = require('fs');
       const path = require('path');
-      
+
       // Check if session directory exists
       if (fs.existsSync(this.path)) {
         // Read all files in session directory
         const files = fs.readdirSync(this.path);
-        
+
         // Delete each session file
         files.forEach((file: string) => {
           try {
@@ -64,7 +64,7 @@ export class Session {
             console.error(`Failed to delete session file ${file}:`, error);
           }
         });
-        
+
         console.log('All session data cleared');
       }
     } catch (error) {

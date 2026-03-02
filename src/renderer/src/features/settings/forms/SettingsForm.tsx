@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 
 export default function SettingsForm({ company }: { company: Company }): React.ReactNode {
   const { t } = useTranslation(['settings'], { keyPrefix: 'form' });
-  const { form, onSubmit, pending, /*isImporting*/ } = useUpdateCompanyInfo({ company });
+  const { form, onSubmit, pending /*isImporting*/ } = useUpdateCompanyInfo({ company });
   // const { exportData } = useExportData();
   // const { backupDb, backupLoader } = useBackupDatabase();
 

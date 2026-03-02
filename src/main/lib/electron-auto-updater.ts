@@ -229,12 +229,11 @@ autoUpdater.on('update-available', async (info) => {
     return;
   }
 
-
   const updateInfo: UpdateInfo = {
     version: info.version,
     releaseDate: info.releaseDate,
-    releaseNotes: typeof info.releaseNotes === 'string'
-      ? info.releaseNotes : 'No release notes available.'
+    releaseNotes:
+      typeof info.releaseNotes === 'string' ? info.releaseNotes : 'No release notes available.'
   };
 
   // Show notification if enabled

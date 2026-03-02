@@ -57,7 +57,6 @@ export default function InvoicePrintTable({ invoice, code }: Props): React.React
       ? `${invoice?.report?.user_surname} ${invoice?.report?.user_name}`
       : `${currentUser?.surname} ${currentUser?.name}`;
 
-
   return (
     <section className="h-screen w-full font-sans flex flex-col gap-16">
       <div className="w-full justify-center items-center text-center text-base font-bold">
