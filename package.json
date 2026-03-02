@@ -1,6 +1,6 @@
 {
   "name": "x.auto",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "x.auto streamlines the workflow of auto-service managers by providing an efficient solution for generating work completion documents, managing information about serviced vehicles in a local database, and tracking each employee's activity.",
   "main": "./out/main/index.js",
   "author": "Sam",
@@ -27,7 +27,7 @@
   "build": {
     "publish": {
       "provider": "github",
-      "owner": "jaspal-creator",
+      "owner": "X-AUTO-SOLUTIONS",
       "repo": "x.auto",
       "private": true
     },
