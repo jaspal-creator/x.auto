@@ -1,6 +1,6 @@
 {
   "name": "x.auto",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "x.auto streamlines the workflow of auto-service managers by providing an efficient solution for generating work completion documents, managing information about serviced vehicles in a local database, and tracking each employee's activity.",
   "main": "./out/main/index.js",
   "author": "Sam",
