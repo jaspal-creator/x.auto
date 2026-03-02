@@ -21,12 +21,26 @@ const DEFAULT_SETTINGS: UpdateSettings = {
 };
 
 class UpdateSettingsManager {
-  private settingsPath: string;
-  private settings: UpdateSettings;
+  private _settings: UpdateSettings | null = null;
+
+  /** Resolve path lazily so app.getPath('userData') is only called after app is ready. */
+  private get settingsPath(): string {
+    return join(app.getPath('userData'), 'update-settings.json');
+  }
+
+  private get settings(): UpdateSettings {
+    if (this._settings === null) {
+      this._settings = this.loadSettings();
+    }
+    return this._settings;
+  }
+
+  private set settings(value: UpdateSettings) {
+    this._settings = value;
+  }
 
   constructor() {
-    this.settingsPath = join(app.getPath('userData'), 'update-settings.json');
-    this.settings = this.loadSettings();
+    // Settings and path are resolved lazily on first use (after app.whenReady).
   }
 
   private loadSettings(): UpdateSettings {

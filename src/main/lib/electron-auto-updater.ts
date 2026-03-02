@@ -229,11 +229,17 @@ autoUpdater.on('update-available', async (info) => {
     return;
   }
 
+  const releaseNotesStr =
+    typeof info.releaseNotes === 'string'
+      ? info.releaseNotes
+      : Array.isArray(info.releaseNotes)
+        ? info.releaseNotes.map((n) => (typeof n === 'string' ? n : (n as { note?: string }).note ?? '')).join('\n')
+        : 'No release notes available.';
+
   const updateInfo: UpdateInfo = {
     version: info.version,
-    releaseDate: info.releaseDate,
-    releaseNotes:
-      typeof info.releaseNotes === 'string' ? info.releaseNotes : 'No release notes available.'
+    releaseDate: info.releaseDate ?? '',
+    releaseNotes: releaseNotesStr || 'No release notes available.'
   };
 
   // Show notification if enabled
@@ -295,11 +301,12 @@ autoUpdater.on('update-downloaded', async (info) => {
 
 autoUpdater.on('error', (error) => {
   log.error('Auto-updater error:', error);
+  const hadProgressBar = progressBar !== null;
   isUpdateInProgress = false;
   closeProgressBar();
 
-  // Only show error dialog if user initiated the update
-  if (progressBar || isUpdateInProgress) {
+  // Show error dialog if user had initiated the update (progress bar was shown)
+  if (hadProgressBar) {
     dialog.showErrorBox(
       'Update Error',
       `An error occurred during the update process:\n\n${error.message}\n\nPlease try again later or download the update manually from the website.`
