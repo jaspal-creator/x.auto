@@ -295,12 +295,14 @@ autoUpdater.on('update-downloaded', async (info) => {
 
 autoUpdater.on('error', (error) => {
   log.error('Auto-updater error:', error);
-  // const hadProgressBar = progressBar !== null;
-  isUpdateInProgress = false;
+  const hadProgressBar = progressBar !== null;
+  const wasInProgress = isUpdateInProgress;
+
   closeProgressBar();
+  isUpdateInProgress = false;
 
   // Show error dialog if user initiated the update
-  if (progressBar || isUpdateInProgress) {
+  if (hadProgressBar || wasInProgress) {
     dialog.showErrorBox(
       'Update Error',
       `An error occurred during the update process:\n\n${error.message}\n\nPlease try again later or download the update manually from the website.`
