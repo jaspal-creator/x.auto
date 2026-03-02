@@ -94,7 +94,7 @@ export default function Navbar(): React.ReactNode {
 
         {version && (
           <p className="mt-4 text-[10px] text-card/80 text-left px-1 group-hover:px-0 truncate">
-            v{version}
+            [v{version}]
           </p>
         )}
       </div>
