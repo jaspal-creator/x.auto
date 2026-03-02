@@ -30,6 +30,11 @@ async function main() {
           return await ipcRenderer.invoke('check-internet');
         }
       });
+      contextBridge.exposeInMainWorld('appInfo', {
+        getVersion: async () => {
+          return await ipcRenderer.invoke('get-app-version');
+        }
+      });
     } catch (error) {
       console.error(error);
     }
@@ -38,6 +43,12 @@ async function main() {
     window.electron = electronAPI;
     // @ts-ignore (define in dts)
     window.xauto = xauto;
+    // @ts-ignore (define in dts)
+    window.appInfo = {
+      getVersion: async () => {
+        return await ipcRenderer.invoke('get-app-version');
+      }
+    };
   }
 }
 

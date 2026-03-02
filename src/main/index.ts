@@ -130,6 +130,11 @@ app.whenReady().then(async () => {
     console.log('Creating main window...');
     const mainWindow = createWindow();
 
+    // Expose application version to renderer
+    ipcMain.handle('get-app-version', () => {
+      return app.getVersion();
+    });
+
     console.log('Starting client status check...');
     CheckClientStatus();
 

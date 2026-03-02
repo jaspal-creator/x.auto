@@ -16,6 +16,32 @@ export default function Navbar(): React.ReactNode {
   const { data } = useClientStatus();
   const [items] = React.useState(data.role ? admin : user);
   const { exit } = useLogout();
+   const [version, setVersion] = React.useState<string>('');
+
+  React.useEffect(() => {
+    let mounted = true;
+
+    const loadVersion = async () => {
+      try {
+        const v =
+          (typeof window !== 'undefined' &&
+            window.appInfo &&
+            (await window.appInfo.getVersion())) ||
+          '';
+        if (mounted) {
+          setVersion(v);
+        }
+      } catch (error) {
+        console.error('Failed to load app version', error);
+      }
+    };
+
+    loadVersion();
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
 
   return (
     <aside className="bg-primary h-dvh fixed left-0 top-0 bottom-0 z-50 p-4 w-20 transition-all duration-300 ease-in hover:w-80 shadow-2xl group flex flex-col gap-5">
@@ -34,7 +60,7 @@ export default function Navbar(): React.ReactNode {
         </ul>
       </div>
 
-      <div className="h-full flex items-end w-full">
+      <div className="h-full flex flex-col justify-between w-full">
         <ul className="flex flex-col gap-5 w-full">
           <li>
             <NavigationField
@@ -65,6 +91,12 @@ export default function Navbar(): React.ReactNode {
             />
           </li>
         </ul>
+
+        {version && (
+          <p className="mt-4 text-[10px] text-card/80 text-left px-1 group-hover:px-0 truncate">
+            v{version}
+          </p>
+        )}
       </div>
     </aside>
   );

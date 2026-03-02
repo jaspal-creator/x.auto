@@ -9,6 +9,9 @@ declare global {
     network: {
       checkOnline: () => Promise<boolean>;
     };
+    appInfo: {
+      getVersion: () => Promise<string>;
+    };
   }
 }
 /* eslint-enable */
