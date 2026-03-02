@@ -1,0 +1,54 @@
+import { toast } from '@/components/ui/use-toast';
+import { useCheckAuth } from '@/hooks/useCheckAuth';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { Response, STATUS } from 'interfaces/response.type';
+import * as React from 'react';
+import { useTranslation } from 'react-i18next';
+import { DeleteResult } from 'typeorm';
+
+export const useDeleteCustomer = ({ invalidateKeys }: { invalidateKeys: any[] }) => {
+  const __auth = useCheckAuth();
+  const { t } = useTranslation(['customers'], { keyPrefix: 'hooks.deleted' });
+  const { t: common } = useTranslation(['common']);
+  const [customer, setCustomer] = React.useState<null | string>(null);
+  const queryClient = useQueryClient();
+  const del = useMutation({
+    mutationKey: ['delete', 'customer'],
+    mutationFn: async ({
+      id,
+      name
+    }: {
+      id: string;
+      name: string;
+    }): Promise<Response<DeleteResult>> => {
+      setCustomer(name);
+      return await window.xauto.resolveMutation('CUSTOMERS:DELETE:MUTATE', { id });
+    },
+    onSuccess: async ({ Success, Error }: Response<DeleteResult>): Promise<any> => {
+      await __auth(Error as Response);
+      if (Success) {
+        toast({
+          title: common('suc'),
+          description: `${t('customer')} ${customer} ${t('suc')}`
+        });
+
+        return Promise.all([
+          queryClient.invalidateQueries({ queryKey: invalidateKeys, exact: true }),
+          queryClient.invalidateQueries({
+            queryKey: ['customers', 'all', { search: '' }],
+            exact: true
+          })
+        ]);
+      }
+      if (Error)
+        return toast({
+          variant: 'destructive',
+          title: common('err'),
+          description:
+            Error.msg === STATUS.CustomerHasInvoices ? common('customers.has_invoices') : Error.msg
+        });
+    }
+  });
+
+  return { deleteCustomer: del.mutate };
+};

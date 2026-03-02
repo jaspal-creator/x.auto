@@ -1,0 +1,4 @@
+provider: github
+owner: X-AUTO-SOLUTIONS
+repo: x.auto
+updaterCacheDirName: x.auto-updater

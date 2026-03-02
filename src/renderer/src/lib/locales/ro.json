@@ -1,0 +1,641 @@
+{
+  "common": {
+    "err": "Eroare",
+    "suc": "Succes",
+    "no_spaces": "Fără spații!",
+    "car_number": {
+      "validation": {
+        "invalid_format": "Format invalid pentru numărul mașinii. Utilizați: XXX 456, XXX 34, XXX 1, CH SH 132, sau OR SK 123"
+      }
+    },
+    "file": {
+      "req": "Fișierul este obligatoriu.",
+      "extension": "Doar extensia .json este acceptată."
+    },
+    "loading": "Se încarcă...",
+    "customers": {
+      "exists": "Acest client există deja.",
+      "has_invoices": "Acest client are facturi și rapoarte."
+    },
+    "noInternet": {
+      "title": "Conexiune la internet indisponibil",
+      "message": "Aplicația nu poate stabili o conexiune la internet în acest moment. Pentru a continua să folosești toate funcționalitățile, te rugăm să verifici conexiunea la rețea și să te asiguri că dispozitivul tău este online.",
+      "retry": "Reîncearcă conexiunea"
+    }
+  },
+
+  "navbar": {
+    "customers": "Clienți",
+    "auto_parts": "Piese auto",
+    "services": "Servicii",
+    "workers": "Angajați",
+    "cars": "Mașini",
+    "invoices": "Acte de lucrări executate",
+    "stats": "Statistici",
+    "report": "Creează raport",
+    "settings": "Setări",
+    "logout": "Deconectare"
+  },
+
+  "setup": {
+    "streamline": "Service auto simplificat, rapid și intuitiv",
+    "continue": "Continuă",
+    "acc_info": "Informații cont",
+    "company_data": "Introducerea datelor companiei",
+    "success": "Aplicația a fost inițializată cu succes! Puteți începe să o folosiți.",
+    "continue_app": "Continuați către aplicație",
+    "form_acc": {
+      "name": "Nume",
+      "surname": "Prenume",
+      "login": "Login",
+      "password": "Parolă",
+      "proceed": "Pentru a continua, creați un cont de administrator pe această pagină.",
+      "continue": "Continuă"
+    },
+    "form_company": {
+      "iban": "IBAN",
+      "bank": "Bancă",
+      "name": "Numele service-ului auto",
+      "code": "Cod fiscal",
+      "text": "Pentru a asigura o tipărire fără probleme a documentelor esențiale, cum ar fi formularele de finalizare a lucrărilor, rapoartele pentru clienți și situațiile de plată, vă rugăm să completați detaliile companiei dumneavoastră.",
+      "init": "Inițializează aplicația",
+      "region": "Region",
+      "town_village": "Localitate"
+    }
+  },
+
+  "welcome": {
+    "title": {
+      "hi": "Bună",
+      "welc": "Bine ați venit la X.Auto!"
+    },
+    "desc": "Soluția dumneavoastră completă pentru toate nevoile de service auto. Să vă menținem mașina în mișcare fără probleme și cu ușurință!"
+  },
+
+  "auth": {
+    "name": "Nume",
+    "paswd": "Parolă",
+    "login": "Login",
+    "auth_err": "Eroare de autentificare",
+    "login_failed": "Nume de utilizator sau parolă invalidă. Vă rugăm verificați datele de conectare și încercați din nou."
+  },
+
+  "workers": {
+    "title": "Angajați",
+    "create_btn": "Creează angajat",
+    "table": {
+      "workers": {
+        "name": "Nume",
+        "surname": "Prenume",
+        "date": "Data nașterii",
+        "nickname": "Login",
+        "profession": "Profesie",
+        "action": "Acțiune"
+      },
+      "worker": {
+        "date": "Data",
+        "brand": "Marca",
+        "model": "Model",
+        "car_number": "Număr mașină",
+        "vin": "Cod VIN",
+        "customer": "Client",
+        "total": "Total",
+        "action": "Acțiune"
+      }
+    },
+    "create": {
+      "name": "Nume",
+      "surname": "Prenume",
+      "date": "Data nașterii",
+      "paswd": "Parolă",
+      "nickname": "Login",
+      "job": {
+        "search": "Caută job",
+        "not_found": "Nu s-au găsit joburi:",
+        "create": "Creează un job nou",
+        "label": "Profesie",
+        "placeholder": "Selectați job"
+      },
+      "role": {
+        "label": "Rol",
+        "placeholder": "Selectați rol",
+        "u": "UTILIZATOR",
+        "a": "ADMINISTRATOR"
+      },
+      "create": "Creează",
+      "update": "Actualizează"
+    },
+    "hooks": {
+      "name_req_err": "Vă rugăm să introduceți un nume.",
+      "surname_req_err": "Vă rugăm să introduceți un prenume.",
+      "nickname_req_err": "Vă rugăm să introduceți un login.",
+      "password_req_err": "Vă rugăm să introduceți o parolă.",
+      "job_req_err": "Vă rugăm să selectați un job.",
+      "role_req_err": "Vă rugăm să selectați un rol.",
+      "date_req_err": "Vă rugăm să selectați o dată.",
+      "user_already_exists": "Un utilizator cu acest login există deja. Vă rugăm să alegeți un alt login.",
+      "created": {
+        "user": "Utilizator:",
+        "suc": "creat cu succes."
+      },
+      "deleted": {
+        "user": "Utilizator:",
+        "suc": "șters cu succes.",
+        "admin_cannot_be_deleted": "Conturile de administrator nu pot fi șterse. Vă rugăm să schimbați rolul în UTILIZATOR mai întâi, apoi ștergeți."
+      },
+      "updated": {
+        "user": "Utilizator:",
+        "suc": "actualizat cu succes."
+      }
+    }
+  },
+
+  "autoparts": {
+    "title": "Piese auto",
+    "create_btn": "Adaugă o piesă auto",
+    "table": {
+      "name": "Nume",
+      "code": "Cod",
+      "manufacturer": "Producător",
+      "action": "Acțiune"
+    },
+    "create": {
+      "name": "Nume",
+      "code": "Cod",
+      "manufacturer": "Producător",
+      "create": "Creează",
+      "update": "Actualizează"
+    },
+    "validation": {
+      "name": {
+        "required": "Numele piesei auto este obligatoriu.",
+        "min_length": "Numele piesei auto trebuie să aibă cel puțin 2 caractere.",
+        "max_length": "Numele piesei auto nu poate depăși 100 de caractere.",
+        "invalid_characters": "Numele piesei auto poate conține doar litere, cifre, spații, cratimă și puncte."
+      },
+      "code": {
+        "max_length": "Codul piesei auto nu poate depăși 50 de caractere.",
+        "invalid_characters": "Codul piesei auto poate conține doar litere, cifre și cratimă."
+      },
+      "manufacturer": {
+        "max_length": "Numele producătorului nu poate depăși 100 de caractere.",
+        "invalid_characters": "Numele producătorului poate conține doar litere, cifre, spații, cratimă și puncte."
+      }
+    },
+    "hooks": {
+      "created": {
+        "part": "Piesă auto:",
+        "suc": "creată cu succes."
+      },
+      "deleted": {
+        "part": "Piesă auto:",
+        "suc": "ștearsă cu succes."
+      },
+      "updated": {
+        "part": "Piesă auto:",
+        "suc": "actualizată cu succes."
+      }
+    }
+  },
+
+  "services": {
+    "title": "Servicii",
+    "create_btn": "Creează serviciu",
+    "table": {
+      "name": "Nume",
+      "action": "Acțiune"
+    },
+    "create": {
+      "name": "Nume",
+      "create": "Creează",
+      "update": "Actualizează"
+    },
+    "validation": {
+      "name": {
+        "required": "Numele serviciului este obligatoriu.",
+        "min_length": "Numele serviciului trebuie să aibă cel puțin 2 caractere.",
+        "max_length": "Numele serviciului nu poate depăși 100 de caractere.",
+        "invalid_characters": "Numele serviciului poate conține doar litere, cifre, spații, cratimă și puncte."
+      }
+    },
+    "hooks": {
+      "created": {
+        "service": "Serviciu:",
+        "suc": "creat cu succes."
+      },
+      "deleted": {
+        "service": "Serviciu:",
+        "suc": "șters cu succes."
+      },
+      "updated": {
+        "service": "Serviciu:",
+        "suc": "actualizat cu succes."
+      }
+    }
+  },
+
+  "cars": {
+    "title": "Mașini",
+    "create_btn": "Creează mașină",
+    "table": {
+      "car": {
+        "date": "Data",
+        "car_number": "Număr mașină",
+        "vin": "Cod VIN",
+        "customer": "Client",
+        "master": "Master",
+        "total": "Total",
+        "action": "Acțiune"
+      },
+      "cars": {
+        "brand": "Marca",
+        "model": "Model",
+        "car_number": "Număr mașină",
+        "vin": "Cod VIN",
+        "customer": "Client",
+        "action": "Acțiune"
+      }
+    },
+    "create": {
+      "customer": {
+        "search": "Caută client",
+        "not_found": "Nu s-au găsit clienți:",
+        "label": "Client",
+        "create": "Creează un client nou"
+      },
+      "brand": "Marca",
+      "model": "Model",
+      "car_number": "Număr mașină",
+      "vin": "Cod VIN",
+      "year": "Anul fabricației",
+      "engine": "Capacitate motor",
+      "create": "Creează",
+      "update": "Actualizează"
+    },
+    "validation": {
+      "brand": {
+        "required": "Marca mașinii este obligatorie.",
+        "min_length": "Marca mașinii trebuie să aibă cel puțin 2 caractere.",
+        "max_length": "Marca mașinii nu poate depăși 50 de caractere.",
+        "invalid_characters": "Marca mașinii poate conține doar litere, cifre, spații, cratimă și puncte."
+      },
+      "model": {
+        "required": "Modelul mașinii este obligatoriu.",
+        "min_length": "Modelul mașinii trebuie să aibă cel puțin 2 caractere.",
+        "max_length": "Modelul mașinii nu poate depăși 50 de caractere.",
+        "invalid_characters": "Modelul mașinii poate conține doar litere, cifre, spații, cratimă și puncte."
+      },
+      "car_number": {
+        "required": "Numărul mașinii este obligatoriu.",
+        "min_length": "Numărul mașinii trebuie să aibă cel puțin 3 caractere.",
+        "max_length": "Numărul mașinii nu poate depăși 10 caractere.",
+        "invalid_format": "Format invalid pentru numărul mașinii. Utilizați: XXX 456, XXX 34, XXX 1, CH SH 132, sau OR SK 123"
+      },
+      "vin": {
+        "required": "Codul VIN este obligatoriu.",
+        "length": "Codul VIN trebuie să aibă exact 17 caractere.",
+        "no_spaces": "Codul VIN nu poate conține spații.",
+        "invalid_characters": "Codul VIN poate conține doar litere (exceptând I, O, Q) și cifre."
+      },
+      "year": {
+        "invalid_type": "Anul trebuie să fie un număr valid.",
+        "min_value": "Anul nu poate fi mai mic decât 1900.",
+        "max_value": "Anul nu poate fi mai mare decât anul următor."
+      },
+      "engine_capacity": {
+        "invalid_type": "Capacitatea motorului trebuie să fie un număr valid.",
+        "min_value": "Capacitatea motorului trebuie să fie cel puțin 0.1 litri.",
+        "max_value": "Capacitatea motorului nu poate depăși 10.0 litri."
+      }
+    },
+    "no_customer": {
+      "title": "Atenție!",
+      "car": "Mașina",
+      "no": "nu are client asociat."
+    },
+    "hooks": {
+      "created": {
+        "car": "Mașină:",
+        "suc": "creată cu succes."
+      },
+      "deleted": {
+        "car": "Mașină:",
+        "suc": "ștearsă cu succes."
+      },
+      "updated": {
+        "car": "Mașină:",
+        "suc": "actualizată cu succes."
+      }
+    }
+  },
+
+  "customers": {
+    "title": "Clienți",
+    "create_btn": "Adaugă un client",
+    "table": {
+      "customer": {
+        "date": "Data",
+        "brand": "Marca",
+        "model": "Model",
+        "car_number": "Număr mașină",
+        "vin": "Cod VIN",
+        "customer_info": "Info Client",
+        "master": "Master",
+        "total": "Total",
+        "action": "Acțiune",
+        "current_customer": "Client Actual",
+        "former_customer": "Client Anterior"
+      },
+      "customers": {
+        "company": "Nume companie",
+        "code": "Cod fiscal",
+        "action": "Acțiune"
+      }
+    },
+    "create": {
+      "name": "Nume",
+      "code": "Cod fiscal",
+      "create": "Creează",
+      "update": "Actualizează"
+    },
+    "hooks": {
+      "created": {
+        "customer": "Client:",
+        "suc": "creat cu succes."
+      },
+      "deleted": {
+        "customer": "Client:",
+        "suc": "șters cu succes."
+      },
+      "updated": {
+        "customer": "Client:",
+        "suc": "actualizat cu succes."
+      }
+    }
+  },
+
+  "invoices": {
+    "title": "Acte de lucrări executate",
+    "table": {
+      "date": "Data",
+      "brand": "Marca",
+      "model": "Model",
+      "car_number": "Număr mașină",
+      "vin": "Cod VIN",
+      "customer": "Client",
+      "master": "Master",
+      "total": "Total",
+      "action": "Acțiune"
+    },
+    "confirm": {
+      "title": "Confirmă Prețurile",
+      "desc_1": "Prin confirmarea acestei acțiuni, se va crea o nouă factură în baza de date cu prețurile specificate pentru acest raport.",
+      "desc_2": "Vă rugăm să verificați cu atenție prețurile.",
+      "table": {
+        "no": "Nr.",
+        "details_actions": "Detalii/Acțiuni",
+        "qntty": "Cantitate",
+        "price": "Preț per unitate/serviciu",
+        "total": "Total",
+        "total_tva": "Total (inclusiv TVA)",
+        "cancel": "Anulează",
+        "close": "Închide",
+        "print": "Tipărește"
+      }
+    },
+    "create": {
+      "master": "Master",
+      "customer": "Client",
+      "vin": "Cod VIN",
+      "car_number": "Număr mașină",
+      "mileage": "Kilometraj curent",
+      "actions": "Acțiuni",
+      "details": "Modifică detalii",
+      "save": "Salvează"
+    },
+    "hooks": {
+      "create": {
+        "suc": "Raport facturat cu succes.",
+        "err": "Nu s-a putut factura acest raport."
+      }
+    },
+    "edit_disabled": {
+      "title": "Nu se poate edita raportul",
+      "message": "Acest raport nu poate fi editat (fie a fost facturat sau a expirat)"
+    },
+    "report_expired": {
+      "title": "Nu se poate edita raportul",
+      "message": "Raportul a expirat. Perioada de editare este limitată la 7 zile de la crearea acestuia."
+    }
+  },
+
+  "report": {
+    "item": {
+      "not_found": "Nu a fost găsit."
+    },
+    "car_not_found": {
+      "desc": "Această mașină nu este în baza de date a clienților! Sigur doriți să adăugați această mașină nouă în baza de date a clienților?",
+      "back": "Înapoi"
+    },
+    "create": {
+      "master": "Master",
+      "customer": "Client",
+      "vin": "Cod VIN",
+      "car_number": "Număr mașină",
+      "mileage": "Kilometraj curent",
+      "actions": "Acțiuni",
+      "search_actions": "Caută acțiuni...",
+      "create_actions": "Creează serviciu",
+      "details": "Detalii",
+      "search_details": "Caută piese auto...",
+      "create_details": "Adaugă o piesă auto",
+      "search_masters": "Căutare maeștri...",
+      "save": "Salvează",
+      "update": "Actualizează"
+    },
+    "search_vin": {
+      "label": "Raport",
+      "go": "Continuă",
+      "vin": "Cod VIN"
+    },
+    "hooks": {
+      "created": {
+        "desc": "Raport creat cu succes.",
+        "at_least_one": "Este necesar cel puțin un element, fie din acțiuni, fie din piese auto."
+      },
+      "updated": {
+        "desc": "Raport actualizat cu succes.",
+        "at_least_one": "Este necesar cel puțin un element, fie din acțiuni, fie din piese auto."
+      },
+      "deleted": {
+        "desc": "Raport șters cu succes."
+      }
+    },
+    "info": {
+      "created": "Creat",
+      "updated": "Actualizat",
+      "expires": "Expiră"
+    }
+  },
+
+  "stats": {
+    "title": "Administrare",
+    "master_stat": {
+      "completed": "Lucrări finalizate",
+      "total": "Total (Servicii/Acțiuni)",
+      "invoice_totals": "Total per Factură",
+      "services_totals": "Total (Piese Auto)",
+      "no_works": "Nicio lucrare efectuată.",
+      "not_found": "Nu a fost găsit!"
+    },
+    "stats_table": {
+      "brand": "Marca",
+      "model": "Model",
+      "car_number": "Număr mașină",
+      "vin": "Cod VIN",
+      "action": "Ultima acțiune",
+      "price": "Preț Total",
+      "services_total": "Total Piese Auto",
+      "actions_total": "Total Servicii"
+    }
+  },
+
+  "settings": {
+    "title": "Setări",
+    "form": {
+      "iban": "IBAN",
+      "bank": "Bancă",
+      "name": "Numele service-ului auto",
+      "code": "Cod fiscal",
+      "backup": "Backup bază de date",
+      "import": "Importă",
+      "export": "Exportă",
+      "cancel": "Anulează",
+      "update": "Actualizează"
+    },
+    "validation": {
+      "iban": {
+        "length": "IBAN trebuie să aibă între 15 și 24 de caractere.",
+        "no_spaces": "IBAN nu poate conține spații.",
+        "format": "Format IBAN invalid. Trebuie să respecte standardul internațional (ex. MD24AG000000000000000123)."
+      },
+      "bank": {
+        "min_length": "Numele băncii trebuie să aibă cel puțin 2 caractere.",
+        "max_length": "Numele băncii nu poate depăși 100 de caractere.",
+        "invalid_characters": "Numele băncii poate conține doar litere, cifre, spații, cratimă și puncte."
+      },
+      "autoservice": {
+        "min_length": "Numele service-ului trebuie să aibă cel puțin 2 caractere.",
+        "max_length": "Numele service-ului nu poate depăși 100 de caractere.",
+        "invalid_characters": "Numele service-ului poate conține doar litere, cifre, spații, cratimă și puncte."
+      },
+      "fiscal_code": {
+        "min_length": "Codul fiscal trebuie să aibă cel puțin 6 caractere.",
+        "max_length": "Codul fiscal nu poate depăși 20 de caractere.",
+        "no_spaces": "Codul fiscal nu poate conține spații.",
+        "invalid_characters": "Codul fiscal poate conține doar litere și cifre."
+      },
+      "file": {
+        "invalid_type": "Vă rugăm să selectați un fișier valid.",
+        "invalid_extension": "Doar fișierele JSON sunt acceptate.",
+        "too_large": "Dimensiunea fișierului nu poate depăși 10MB."
+      }
+    },
+    "hooks": {
+      "backup": {
+        "suc": "Backup:",
+        "err": "Nu s-a putut face backup-ul datelor."
+      },
+      "export": {
+        "err": "Eroare la exportarea datelor aplicației"
+      },
+      "import": {
+        "suc": "Date importate cu succes.",
+        "err": "Nu s-au putut importa datele."
+      },
+      "update": {
+        "suc": "Datele companiei au fost actualizate cu succes.",
+        "err": "Eroare la actualizarea datelor companiei."
+      }
+    }
+  },
+
+  "delete_item": {
+    "title": "Sigur doriți să ștergeți datele?",
+    "back": "Înapoi",
+    "delete": "Șterge"
+  },
+
+  "download": {
+    "opts": "Opțiuni de descărcare",
+    "client": "Tabel client",
+    "manager": "Tabel manager",
+    "payment": "Tabel plată",
+    "close": "Închide",
+    "download": "Descarcă",
+    "pdf": {
+      "success": "PDF descărcat cu succes",
+      "success_desc": "Factura PDF a fost salvată pe Desktop în dosarul rapoartelor anuale.",
+      "error": "Descărcarea PDF a eșuat",
+      "error_desc": "A apărut o problemă la generarea PDF-ului. Vă rugăm să încercați din nou.",
+      "load_error": "Nu s-au putut încărca datele facturii",
+      "load_error_desc": "Nu se pot încărca datele facturii. Vă rugăm verificați conexiunea și încercați din nou.",
+      "generation_error": "Generarea PDF a eșuat",
+      "generation_error_desc": "A apărut o eroare în timpul creării fișierului PDF. Vă rugăm să încercați din nou.",
+      "save_error": "Nu s-a putut salva PDF-ul",
+      "save_error_desc": "PDF-ul a fost generat dar nu a putut fi salvat. Vă rugăm verificați permisiunile și încercați din nou."
+    }
+  },
+
+  "utils": {
+    "search": "Caută",
+    "categories": {
+      "category": "Categorie",
+      "customer": "Client",
+      "vin": "VIN",
+      "number": "Numărul mașinii",
+      "master": "Master",
+      "mark": "Marcă",
+      "model": "Model"
+    },
+    "sort": {
+      "r": "Recent",
+      "o": "Vechi",
+      "az": "Sortează A-z",
+      "za": "Sortează Z-a"
+    },
+    "password": {
+      "show": "Afișează parola",
+      "hide": "Ascunde parola",
+      "validation": {
+        "rule_1": "Parola trebuie să aibă cel puțin 4 caractere",
+        "rule_2": "Parola trebuie să conțină cel puțin 3 litere",
+        "rule_3": "Parola trebuie să conțină cel puțin un număr"
+      }
+    },
+    "string": "Minim {{long}} caractere",
+    "max_string": "Maxim {{long}} caractere",
+    "iban": {
+      "validation": {
+        "rule_1": "IBAN trebuie să aibă exact 24 de caractere.",
+        "rule_2": "Primul segment trebuie să fie 'MD' (codul țării).",
+        "rule_3": "Al doilea segment trebuie să conțină 2 cifre pentru codul de control",
+        "rule_4": "Al treilea segment trebuie să conțină 2 caractere alfanumerice pentru identificatorul băncii.",
+        "rule_5": "Ultimele 18 caractere trebuie să fie alfanumerice pentru identificatorul clientului."
+      }
+    },
+    "date_range_picker": {
+      "today": "Astăzi",
+      "yesterday": "Ieri",
+      "last7": "Ultimele 7 zile",
+      "last14": "Ultimele 14 zile",
+      "last30": "Ultimele 30 zile",
+      "thisWeek": "Săptămâna aceasta",
+      "lastWeek": "Săptămâna trecută",
+      "thisMonth": "Luna aceasta",
+      "lastMonth": "Luna trecută",
+      "cancel": "Anulează",
+      "update": "Actualizează"
+    }
+  }
+}

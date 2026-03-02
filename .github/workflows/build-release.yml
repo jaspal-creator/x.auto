@@ -1,0 +1,119 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        # os: [windows-latest, macos-latest, ubuntu-latest]
+        os: [windows-latest]  # Focus on Windows only
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # - name: Install dependencies (Linux)
+      #   if: matrix.os == 'ubuntu-latest'
+      #   run: |
+      #     # Handle Rollup optional dependencies issue on Linux
+      #     rm -rf package-lock.json node_modules
+      #     npm install
+
+      - name: Install dependencies (Windows)
+        if: matrix.os == 'windows-latest'
+        run: |
+          # Handle Rollup optional dependencies issue on Windows
+          Remove-Item -Path "package-lock.json" -Force -ErrorAction SilentlyContinue
+          Remove-Item -Path "node_modules" -Recurse -Force -ErrorAction SilentlyContinue
+          npm install
+
+      # - name: Install dependencies (macOS)
+      #   if: matrix.os == 'macos-latest'
+      #   run: npm ci
+
+      - name: Rebuild native dependencies
+        run: npm run rebuild
+
+      - name: Build application
+        run: npm run build
+
+      - name: Build for Windows
+        if: matrix.os == 'windows-latest'
+        run: npx electron-builder --win --publish=never
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Build for macOS
+      #   if: matrix.os == 'macos-latest'
+      #   run: npx electron-builder --mac --publish=never
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: Build for Linux
+      #   if: matrix.os == 'ubuntu-latest'
+      #   run: npx electron-builder --linux --publish=never
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ matrix.os }}
+          path: |
+            dist/*.exe
+            dist/*.msi
+            dist/*.dmg
+            dist/*.zip
+            dist/*.AppImage
+            dist/*.deb
+            dist/*.snap
+            dist/*.tar.gz
+            dist/latest*.yml
+            dist/*.blockmap
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            artifacts/release-windows-latest/*
+            # artifacts/release-macos-latest/*
+            # artifacts/release-ubuntu-latest/*
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

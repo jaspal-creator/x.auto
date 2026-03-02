@@ -1,0 +1,649 @@
+{
+  "common": {
+    "err": "Error",
+    "suc": "Success",
+    "no_spaces": "No Spaces!",
+    "invalid_iban": {
+      "format": "Invalid IBAN format",
+      "checksum": "Invalid IBAN checksum"
+    },
+    "file": {
+      "req": "File is required.",
+      "extension": "Only .json extension support."
+    },
+    "loading": "Loading...",
+    "customers": {
+      "exists": "This customer already exists.",
+      "has_invoices": "This customer has invoices and reports."
+    },
+    "noInternet": {
+      "title": "No internet connection available",
+      "message": "The application cannot establish an internet connection at the moment. To continue using all features, please check your network connection and make sure your device is online.",
+      "retry": "Retry connection"
+    }
+  },
+
+  "navbar": {
+    "customers": "Customers",
+    "auto_parts": "Auto Parts",
+    "services": "Services",
+    "workers": "Workers",
+    "cars": "Cars",
+    "invoices": "Acts of work performed",
+    "stats": "Stats",
+    "report": "Create report",
+    "settings": "Settings",
+    "logout": "Log out"
+  },
+
+  "setup": {
+    "streamline": "Simplified, fast, and intuitive auto service.",
+    "continue": "Continue",
+    "acc_info": "Account Info",
+    "company_data": "Entering company data",
+    "success": "The application has been successfully initialized! You can start using it.",
+    "continue_app": " Continue to the app",
+    "form_acc": {
+      "name": "Name",
+      "surname": "Surname",
+      "login": "Login",
+      "password": "Password",
+      "proceed": "To proceed, create an administrator account on this page.",
+      "continue": "Continue"
+    },
+    "form_company": {
+      "iban": "IBAN",
+      "bank": "Bank",
+      "name": "Name of autoservice",
+      "code": "Fiscal code",
+      "text": "To ensure smooth printing of essential documents like work completion forms, client reports, and payment statements, please fill in your company details.",
+      "init": "Initialize app",
+      "region": "Region",
+      "town_village": "Town/Village"
+    }
+  },
+
+  "welcome": {
+    "title": {
+      "hi": "Hi",
+      "welc": "Welcome to X.Auto!"
+    },
+    "desc": "Your one-stop solution for all auto service needs. Let's keep your car running smoothly with ease!"
+  },
+
+  "auth": {
+    "name": "Name",
+    "paswd": "Password",
+    "login": "Login",
+    "auth_err": "Authentication Error",
+    "login_failed": "Invalid username or password. Please check your credentials and try again."
+  },
+
+  "workers": {
+    "title": "Workers",
+    "create_btn": "Create worker",
+    "table": {
+      "workers": {
+        "name": "Name",
+        "surname": "Surname",
+        "date": "Date of birth",
+        "nickname": "Nickname",
+        "profession": "Profession",
+        "action": "Action"
+      },
+      "worker": {
+        "date": "Date",
+        "brand": "Brand",
+        "model": "Model",
+        "car_number": "Car Number",
+        "vin": "VIN-Code",
+        "customer": "Customer",
+        "total": "Total",
+        "action": "Action"
+      }
+    },
+    "create": {
+      "name": "Name",
+      "surname": "Surname",
+      "date": "Date of birth",
+      "paswd": "Password",
+      "nickname": "Nickname",
+      "job": {
+        "search": "Search Job",
+        "not_found": "No Jobs found:",
+        "create": "Create new job",
+        "label": "Profession",
+        "placeholder": "Select Job"
+      },
+      "role": {
+        "label": "Role",
+        "placeholder": "Select Role",
+        "u": "USER",
+        "a": "ADMIN"
+      },
+      "create": "Create",
+      "update": "Update"
+    },
+    "hooks": {
+      "name_req_err": "Please enter a name.",
+      "surname_req_err": "Please enter a surname.",
+      "nickname_req_err": "Please enter a login.",
+      "password_req_err": "Please enter a password.",
+      "job_req_err": "Please select a job.",
+      "role_req_err": "Please select a role.",
+      "date_req_err": "Please select a date.",
+      "user_already_exists": "A user with this login already exists. Please choose a different login.",
+      "created": {
+        "user": "User:",
+        "suc": "created successfully."
+      },
+      "deleted": {
+        "user": "User:",
+        "suc": "deleted successfully.",
+        "admin_cannot_be_deleted": "Administrator accounts cannot be deleted. Please change the role to USER first, then delete."
+      },
+      "updated": {
+        "user": "User:",
+        "suc": "updated successfully."
+      }
+    }
+  },
+
+  "autoparts": {
+    "title": "Auto parts",
+    "create_btn": "Add an auto part",
+    "table": {
+      "name": "Name",
+      "code": "Code",
+      "manufacturer": "Manufacturer",
+      "action": "Action"
+    },
+    "create": {
+      "name": "Name",
+      "code": "Code",
+      "manufacturer": "Manufacturer",
+      "create": "Create",
+      "update": "Update"
+    },
+    "validation": {
+      "name": {
+        "required": "Auto part name is required.",
+        "min_length": "Auto part name must be at least 2 characters long.",
+        "max_length": "Auto part name cannot exceed 100 characters.",
+        "invalid_characters": "Auto part name can only contain letters, numbers, spaces, hyphens, and dots."
+      },
+      "code": {
+        "max_length": "Auto part code cannot exceed 50 characters.",
+        "invalid_characters": "Auto part code can only contain letters, numbers, and hyphens."
+      },
+      "manufacturer": {
+        "max_length": "Manufacturer name cannot exceed 100 characters.",
+        "invalid_characters": "Manufacturer name can only contain letters, numbers, spaces, hyphens, and dots."
+      }
+    },
+    "hooks": {
+      "created": {
+        "part": "Auto Part:",
+        "suc": "created successfully."
+      },
+      "deleted": {
+        "part": "Auto Part:",
+        "suc": "deleted successfully."
+      },
+      "updated": {
+        "part": "Auto Part:",
+        "suc": "updated successfully."
+      }
+    }
+  },
+
+  "services": {
+    "title": "Services",
+    "create_btn": "Create service",
+    "table": {
+      "name": "Name",
+      "action": "Action"
+    },
+    "create": {
+      "name": "Name",
+      "create": "Create",
+      "update": "Update"
+    },
+    "validation": {
+      "name": {
+        "required": "Service name is required.",
+        "min_length": "Service name must be at least 2 characters long.",
+        "max_length": "Service name cannot exceed 100 characters.",
+        "invalid_characters": "Service name can only contain letters, numbers, spaces, hyphens, and dots."
+      }
+    },
+    "hooks": {
+      "created": {
+        "service": "Service:",
+        "suc": "created successfully."
+      },
+      "deleted": {
+        "service": "Service:",
+        "suc": "deleted successfully."
+      },
+      "updated": {
+        "service": "Service:",
+        "suc": "updated successfully."
+      }
+    }
+  },
+
+  "cars": {
+    "title": "Cars",
+    "create_btn": "Create car",
+    "table": {
+      "car": {
+        "date": "Date",
+        "car_number": "Car Number",
+        "vin": "VIN-Code",
+        "customer": "Customer",
+        "master": "Master",
+        "total": "Total",
+        "action": "Action"
+      },
+      "cars": {
+        "brand": "Brand",
+        "model": "Model",
+        "car_number": "Car Number",
+        "vin": "VIN-Code",
+        "customer": "Customer",
+        "action": "Action"
+      }
+    },
+    "create": {
+      "customer": {
+        "search": "Search Customer",
+        "not_found": "No Customers found:",
+        "label": "Customer",
+        "create": "Create new customer"
+      },
+      "brand": "Brand",
+      "model": "Model",
+      "car_number": "Car Number",
+      "vin": "VIN-Code",
+      "year": "Manufacture year",
+      "engine": "Engine capacity",
+      "create": "Create",
+      "update": "Update"
+    },
+    "validation": {
+      "brand": {
+        "required": "Car brand is required.",
+        "min_length": "Car brand must be at least 2 characters long.",
+        "max_length": "Car brand cannot exceed 50 characters.",
+        "invalid_characters": "Car brand can only contain letters, numbers, spaces, hyphens, and dots."
+      },
+      "model": {
+        "required": "Car model is required.",
+        "min_length": "Car model must be at least 2 characters long.",
+        "max_length": "Car model cannot exceed 50 characters.",
+        "invalid_characters": "Car model can only contain letters, numbers, spaces, hyphens, and dots."
+      },
+      "car_number": {
+        "required": "Car number is required.",
+        "min_length": "Car number must be at least 3 characters long.",
+        "max_length": "Car number cannot exceed 10 characters.",
+        "invalid_format": "Invalid car number format. Use: XXX 456, XXX 34, XXX 1, CH SH 132, or OR SK 123"
+      },
+      "vin": {
+        "required": "VIN code is required.",
+        "length": "VIN code must be exactly 17 characters long.",
+        "no_spaces": "VIN code cannot contain spaces.",
+        "invalid_characters": "VIN code can only contain letters (except I, O, Q) and numbers."
+      },
+      "year": {
+        "invalid_type": "Year must be a valid number.",
+        "min_value": "Year cannot be earlier than 1900.",
+        "max_value": "Year cannot be later than next year."
+      },
+      "engine_capacity": {
+        "invalid_type": "Engine capacity must be a valid number.",
+        "min_value": "Engine capacity must be at least 0.1 liters.",
+        "max_value": "Engine capacity cannot exceed 10.0 liters."
+      }
+    },
+    "no_customer": {
+      "title": "Warrning!",
+      "car": "Car",
+      "no": "has no customer."
+    },
+    "hooks": {
+      "created": {
+        "car": "Car:",
+        "suc": "created successfully."
+      },
+      "deleted": {
+        "car": "Car:",
+        "suc": "deleted successfully."
+      },
+      "updated": {
+        "car": "Car:",
+        "suc": "updated successfully."
+      }
+    }
+  },
+
+  "customers": {
+    "title": "Customers",
+    "create_btn": "Add a customer",
+    "table": {
+      "customer": {
+        "date": "Date",
+        "brand": "Brand",
+        "model": "Model",
+        "car_number": "Car Number",
+        "vin": "VIN-Code",
+        "customer_info": "Customer Info",
+        "master": "Master",
+        "total": "Total",
+        "action": "Action",
+        "current_customer": "Current Customer",
+        "former_customer": "Former Customer"
+      },
+      "customers": {
+        "company": "Company name",
+        "code": "Fiscal Code",
+        "action": "Action"
+      }
+    },
+    "create": {
+      "name": "Name",
+      "code": "Fiscal code",
+      "create": "Create",
+      "update": "Update"
+    },
+    "hooks": {
+      "created": {
+        "customer": "Customer:",
+        "suc": "created successfully."
+      },
+      "deleted": {
+        "customer": "Customer:",
+        "suc": "deleted successfully."
+      },
+      "updated": {
+        "customer": "Customer:",
+        "suc": "updated successfully."
+      }
+    }
+  },
+
+  "invoices": {
+    "title": "Acts of work performed",
+    "table": {
+      "date": "Date",
+      "brand": "Brand",
+      "model": "Model",
+      "car_number": "Car Number",
+      "vin": "VIN-Code",
+      "customer": "Customer",
+      "master": "Master",
+      "total": "Total",
+      "action": "Action"
+    },
+    "confirm": {
+      "title": "Confirm Prices",
+      "desc_1": "By confirming this action, a new invoice will be created in the database with the specified prices for this report.",
+      "desc_2": "Please check and verify the prices carefully.",
+      "table": {
+        "no": "No",
+        "details_actions": "Details/Actions",
+        "qntty": "Quantity",
+        "price": "Price per unit/service",
+        "total": "Total",
+        "total_tva": "Total (inclusiv TVA)",
+        "cancel": "Cancel",
+        "close": "Close",
+        "print": "Print"
+      }
+    },
+    "create": {
+      "master": "Master",
+      "customer": "Customer",
+      "vin": "VIN-Code",
+      "car_number": "Car number",
+      "mileage": "Current mileage",
+      "actions": "Actions",
+      "details": "Change Details",
+      "save": "Save"
+    },
+    "hooks": {
+      "create": {
+        "suc": "Report invoiced successfully.",
+        "err": "Failed to invoice this report."
+      }
+    },
+    "edit_disabled": {
+      "title": "Cannot edit report",
+      "message": "This report cannot be edited (either it has been invoiced or has expired)"
+    },
+    "report_expired": {
+      "title": "Cannot edit report",
+      "message": "The report has expired. The editing time window is limited to 7 days from creation."
+    }
+  },
+
+  "report": {
+    "item": {
+      "not_found": "Not Found."
+    },
+    "car_not_found": {
+      "desc": "This car is not in the client database! Are you sure you want to add this new car in client database?",
+      "back": "Back"
+    },
+    "create": {
+      "master": "Master",
+      "customer": "Customer",
+      "vin": "VIN-Code",
+      "car_number": "Car number",
+      "mileage": "Current mileage",
+
+      "actions": "Actions",
+      "search_actions": "Search actions...",
+      "create_actions": "Create Service",
+
+      "details": "Details",
+      "search_details": "Search auto parts...",
+      "create_details": "Add an auto part",
+
+      "search_masters": "Search masters...",
+
+      "save": "Save",
+      "update": "Update"
+    },
+    "search_vin": {
+      "label": "Report",
+      "go": "Go On",
+      "vin": "VIN-Code"
+    },
+    "hooks": {
+      "created": {
+        "desc": "Report successfully created.",
+        "at_least_one": "At least one item is required, from actions or from auto parts."
+      },
+      "updated": {
+        "desc": "Report successfully updated.",
+        "at_least_one": "At least one item is required, from actions or from auto parts."
+      },
+      "deleted": {
+        "desc": "Report successfully deleted."
+      }
+    },
+    "info": {
+      "created": "Created",
+      "updated": "Updated",
+      "expires": "Expires"
+    }
+  },
+
+  "stats": {
+    "title": "Administration",
+    "master_stat": {
+      "completed": "Completed works",
+      "total": "Total (Services/Actions)",
+      "invoice_totals": "Total per Invoice", 
+      "services_totals": "Total (Auto Parts)",
+      "no_works": "No works done.",
+      "not_found": "Not found!"
+    },
+    "stats_table": {
+      "brand": "Brand",
+      "model": "Model",
+      "car_number": "Car Number",
+      "vin": "VIN-Code",
+      "action": "Last Action",
+      "price": "Total Price",
+      "services_total": "Auto Parts Total",
+      "actions_total": "Services Total"
+    }
+  },
+
+  "settings": {
+    "title": "Settings",
+    "form": {
+      "iban": "IBAN",
+      "bank": "Bank",
+      "name": "Name of autoservice",
+      "code": "Fiscal Code",
+      "backup": "Database backup",
+      "import": "Import",
+      "export": "Export",
+      "cancel": "Cancel",
+      "update": "Update"
+    },
+    "validation": {
+      "iban": {
+        "length": "IBAN must be between 15 and 24 characters long.",
+        "no_spaces": "IBAN cannot contain spaces.",
+        "format": "Invalid IBAN format. Must follow international standard (e.g., MD24AG000000000000000123)."
+      },
+      "bank": {
+        "min_length": "Bank name must be at least 2 characters long.",
+        "max_length": "Bank name cannot exceed 100 characters.",
+        "invalid_characters": "Bank name can only contain letters, numbers, spaces, hyphens, and dots."
+      },
+      "autoservice": {
+        "min_length": "Autoservice name must be at least 2 characters long.",
+        "max_length": "Autoservice name cannot exceed 100 characters.",
+        "invalid_characters": "Autoservice name can only contain letters, numbers, spaces, hyphens, and dots."
+      },
+      "fiscal_code": {
+        "min_length": "Fiscal code must be at least 6 characters long.",
+        "max_length": "Fiscal code cannot exceed 20 characters.",
+        "no_spaces": "Fiscal code cannot contain spaces.",
+        "invalid_characters": "Fiscal code can only contain letters and numbers."
+      },
+      "file": {
+        "invalid_type": "Please select a valid file.",
+        "invalid_extension": "Only JSON files are supported.",
+        "too_large": "File size cannot exceed 10MB."
+      }
+    },
+    "hooks": {
+      "backup": {
+        "suc": "Backup:",
+        "err": "Failed to backup data."
+      },
+      "export": {
+        "err": "Error exporting application data"
+      },
+      "import": {
+        "suc": "Data imported successffully.",
+        "err": "Failed to import data."
+      },
+      "update": {
+        "suc": "Company Data updated successfully.",
+        "err": "Error updateing company data."
+      }
+    }
+  },
+
+  "delete_item": {
+    "title": "Are you sure you want to delete the data?",
+    "back": "Back",
+    "delete": "Delete"
+  },
+
+  "download": {
+    "opts": "Download options",
+    "client": "Client table",
+    "manager": "Manager table",
+    "payment": "Payment table",
+    "close": "Close",
+    "download": "Download",
+    "pdf": {
+      "success": "PDF downloaded successfully",
+      "success_desc": "The invoice PDF has been saved to your Desktop in the yearly reports folder.",
+      "error": "PDF download failed",
+      "error_desc": "There was an issue generating the PDF. Please try again.",
+      "load_error": "Failed to load invoice data",
+      "load_error_desc": "Unable to load the invoice data. Please check your connection and try again.",
+      "generation_error": "PDF generation failed",
+      "generation_error_desc": "An error occurred while creating the PDF file. Please try again.",
+      "save_error": "Failed to save PDF",
+      "save_error_desc": "The PDF was generated but could not be saved. Please check your permissions and try again."
+    }
+  },
+
+  "utils": {
+    "search": "Search",
+    "categories": {
+      "category": "Category",
+      "customer": "Customer",
+      "vin": "VIN",
+      "number": "Car number",
+      "master": "Master",
+      "mark": "Mark",
+      "model": "Model"
+    },
+    "sort": {
+      "r": "Recent",
+      "o": "Older",
+      "az": "Sort by A-z",
+      "za": "Sort by Z-a"
+    },
+    "password": {
+      "show": "Show password",
+      "hide": "Hide password",
+      "validation": {
+        "rule_1": "The password must be at least 4 characters long",
+        "rule_2": "The password must contain at least 3 letters",
+        "rule_3": "The password must contain at least one number"
+      }
+    },
+    "string": "Minimum {{long}} characters",
+    "max_string": "Maximum {{long}} characters",
+    "car_number": {
+      "validation": {
+        "invalid_format": "Invalid car number format. Use: XXX 456, XXX 34, XXX 1, CH SH 132, or OR SK 123"
+      }
+    },
+    "iban": {
+      "validation": {
+        "rule_1": "IBAN must be exactly 24 characters long.",
+        "rule_2": "The first segment must be 'MD' (country code).",
+        "rule_3": "The second segment must contain 2 digits for the control code.",
+        "rule_4": "The third segment must contain 2 alphanumeric characters for the bank identifier.",
+        "rule_5": "The last 18 characters must be alphanumeric for the client identifier."
+      }
+    },
+    "date_range_picker": {
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "last7": "Last 7 days",
+      "last14": "Last 14 days",
+      "last30": "Last 30 days",
+      "thisWeek": "This Week",
+      "lastWeek": "Last Week",
+      "thisMonth": "This Month",
+      "lastMonth": "Last Month",
+      "cancel": "Cancel",
+      "update": "Update"
+    }
+  }
+}

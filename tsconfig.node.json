@@ -1,0 +1,24 @@
+{
+  "extends": "@electron-toolkit/tsconfig/tsconfig.node.json",
+  "include": [
+    "src/main/*",
+    "src/main/**/*",
+    "src/preload/*",
+    "src/interfaces/**/*",
+    "src/main/entities/*"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "types": ["node"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "target": "ES2020",
+    "module": "ES2020",
+    "baseUrl": ".",
+    "paths": {
+      "entities/*": ["src/main/entities/*"],
+      "interfaces/*": ["src/interfaces/*"]
+    }
+  }
+}
